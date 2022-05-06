@@ -45,6 +45,10 @@ markers = [
     'bci/dotnet-aspnet_3.1',
     'bci/dotnet-aspnet_5.0',
     'bci/dotnet-aspnet_6.0',
+    'bci/rust_1.56',
+    'bci/rust_1.57',
+    'bci/rust_1.58',
+    'bci/rust_1.59',
     'suse/389-ds_2.0'
 ]
 
