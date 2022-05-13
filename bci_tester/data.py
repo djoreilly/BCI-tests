@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
 import os
 from typing import List
 from typing import Optional
 from typing import Sequence
+
+from pytest_container.container import container_from_pytest_param
 
 try:
     from typing import Literal
@@ -370,3 +373,16 @@ CONTAINERS_WITHOUT_ZYPPER = [
 
 #: Containers that are directly pulled from registry.suse.de
 ALL_CONTAINERS = CONTAINERS_WITH_ZYPPER + CONTAINERS_WITHOUT_ZYPPER
+
+
+if __name__ == "__main__":
+    import json
+
+    print(
+        json.dumps(
+            [
+                container_from_pytest_param(cont).get_base().url
+                for cont in ALL_CONTAINERS
+            ]
+        )
+    )
